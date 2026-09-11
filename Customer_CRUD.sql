@@ -8,6 +8,8 @@ SQL> CREATE TABLE Customer (
   8  	 Age		 NUMBER,
   9  	 Address	 VARCHAR2(255)
  10  );
+
+Table created.
              
 SQL> INSERT INTO Customer
   2  VALUES (1, 'Renu', 'Srinivasan', 'renu@gmail.com', '9876543210', TO_DATE('15-06-2005', 'DD-MM-YYYY'), 20, 'Chennai');
