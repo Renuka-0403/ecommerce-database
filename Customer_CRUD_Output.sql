@@ -1,4 +1,3 @@
-
 SQL> CREATE TABLE Customer (
   2  	 Customer_ID	 NUMBER PRIMARY KEY,
   3  	 First_Name	 VARCHAR2(50) NOT NULL,
@@ -9,9 +8,7 @@ SQL> CREATE TABLE Customer (
   8  	 Age		 NUMBER,
   9  	 Address	 VARCHAR2(255)
  10  );
-CREATE TABLE Customer (
              
-SQL> 
 SQL> INSERT INTO Customer
   2  VALUES (1, 'Renu', 'Srinivasan', 'renu@gmail.com', '9876543210', TO_DATE('15-06-2005', 'DD-MM-YYYY'), 20, 'Chennai');
 
@@ -41,37 +38,31 @@ SQL> INSERT INTO Customer
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Customer
   2  VALUES (6, 'Nandhini', 'Ravi', 'nandhini.ravi@gmail.com', '9876545678', TO_DATE('30-07-2003', 'DD-MM-YYYY'), 22, 'Erode');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Customer
   2  VALUES (7, 'Karthik', 'Prakash', 'karthik.prakash@gmail.com', '9876556789', TO_DATE('05-11-2002', 'DD-MM-YYYY'), 23, 'Vellore');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Customer
   2  VALUES (8, 'Swetha', 'Balaji', 'swetha.balaji@gmail.com', '9876567890', TO_DATE('12-09-2005', 'DD-MM-YYYY'), 20, 'Tirunelveli');
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Customer
   2  VALUES (9, 'Vignesh', 'Ganesh', 'vignesh.ganesh@gmail.com', '9876578901', TO_DATE('25-03-2002', 'DD-MM-YYYY'), 23, 'Thanjavur');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Customer
   2  VALUES (10, 'Meena', 'Krishnan', 'meena.krishnan@gmail.com', '9876589012', TO_DATE('16-08-2004', 'DD-MM-YYYY'), 21, 'Kanchipuram');
 
 1 row created.
 
-SQL> 
 SQL> SELECT * FROM Customer;
 
 CUSTOMER_ID FIRST_NAME                                         LAST_NAME                                                                                                                                
@@ -120,10 +111,8 @@ Thanjavur
 meena.krishnan@gmail.com                                                                             9876589012      16-AUG-04         21                                                               
 Kanchipuram                                                                                                                                                                                             
                                                                                                                                                                                                         
-
 10 rows selected.
 
-SQL> 
 SQL> SELECT * FROM Customer
   2  WHERE Customer_ID = 1;
 
@@ -137,10 +126,8 @@ ADDRESS
 renu@gmail.com                                                                                       9876543210      15-JUN-05         20                                                               
 Chennai                                                                                                                                                                                                 
                                                                                                                                                                                                         
-
 1 row selected.
 
-SQL> 
 SQL> SELECT * FROM Customer
   2  WHERE Email = 'renu@gmail.com';
 
@@ -154,10 +141,8 @@ ADDRESS
 renu@gmail.com                                                                                       9876543210      15-JUN-05         20                                                               
 Chennai                                                                                                                                                                                                 
                                                                                                                                                                                                         
-
 1 row selected.
 
-SQL> 
 SQL> SELECT * FROM Customer
   2  WHERE First_Name = 'Renu';
 
@@ -171,10 +156,8 @@ ADDRESS
 renu@gmail.com                                                                                       9876543210      15-JUN-05         20                                                               
 Chennai                                                                                                                                                                                                 
                                                                                                                                                                                                         
-
 1 row selected.
-
-SQL> 
+  
 SQL> SELECT * FROM Customer
   2  WHERE Age > 20;
 
@@ -212,10 +195,8 @@ Thanjavur
 meena.krishnan@gmail.com                                                                             9876589012      16-AUG-04         21                                                               
 Kanchipuram                                                                                                                                                                                             
                                                                                                                                                                                                         
-
 7 rows selected.
 
-SQL> 
 SQL> SELECT * FROM Customer
   2  WHERE Address = 'Chennai';
 
@@ -229,10 +210,8 @@ ADDRESS
 renu@gmail.com                                                                                       9876543210      15-JUN-05         20                                                               
 Chennai                                                                                                                                                                                                 
                                                                                                                                                                                                         
-
 1 row selected.
 
-SQL> 
 SQL> SELECT Customer_ID, First_Name, Last_Name
   2  FROM Customer;
 
@@ -250,8 +229,7 @@ CUSTOMER_ID FIRST_NAME                                         LAST_NAME
          10 Meena                                              Krishnan                                                                                                                                 
 
 10 rows selected.
-
-SQL> 
+  
 SQL> SELECT * FROM Customer
   2  ORDER BY First_Name;
 
@@ -301,10 +279,8 @@ Tirunelveli
 vignesh.ganesh@gmail.com                                                                             9876578901      25-MAR-02         23                                                               
 Thanjavur                                                                                                                                                                                               
                                                                                                                                                                                                         
-
 10 rows selected.
 
-SQL> 
 SQL> SELECT COUNT(*) AS Total_Customers
   2  FROM Customer;
 
@@ -314,14 +290,12 @@ TOTAL_CUSTOMERS
 
 1 row selected.
 
-SQL> 
 SQL> UPDATE Customer
   2  SET Phone = '9123456789'
   3  WHERE Customer_ID = 1;
 
 1 row updated.
 
-SQL> 
 SQL> SELECT * FROM Customer
   2  WHERE Customer_ID = 1;
 
@@ -335,17 +309,14 @@ ADDRESS
 renu@gmail.com                                                                                       9123456789      15-JUN-05         20                                                               
 Chennai                                                                                                                                                                                                 
                                                                                                                                                                                                         
-
 1 row selected.
 
-SQL> 
 SQL> UPDATE Customer
   2  SET Address = 'Anna Nagar, Chennai'
   3  WHERE Customer_ID = 2;
 
 1 row updated.
 
-SQL> 
 SQL> SELECT * FROM Customer
   2  WHERE Customer_ID = 2;
 
@@ -359,17 +330,14 @@ ADDRESS
 arjun.kumar@gmail.com                                                                                9876501234      22-SEP-03         22                                                               
 Anna Nagar, Chennai                                                                                                                                                                                     
                                                                                                                                                                                                         
-
 1 row selected.
 
-SQL> 
 SQL> UPDATE Customer
   2  SET Email = 'priya.new@gmail.com'
   3  WHERE Customer_ID = 3;
 
 1 row updated.
-
-SQL> 
+ 
 SQL> SELECT * FROM Customer
   2  WHERE Customer_ID = 3;
 
@@ -383,17 +351,14 @@ ADDRESS
 priya.new@gmail.com                                                                                  9876512345      08-DEC-03         22                                                               
 Madurai                                                                                                                                                                                                 
                                                                                                                                                                                                         
-
 1 row selected.
 
-SQL> 
 SQL> UPDATE Customer
   2  SET Age = 23
   3  WHERE Customer_ID = 6;
 
 1 row updated.
 
-SQL> 
 SQL> SELECT * FROM Customer
   2  WHERE Customer_ID = 6;
 
@@ -407,16 +372,13 @@ ADDRESS
 nandhini.ravi@gmail.com                                                                              9876545678      30-JUL-03         23                                                               
 Erode                                                                                                                                                                                                   
                                                                                                                                                                                                         
-
 1 row selected.
 
-SQL> 
 SQL> DELETE FROM Customer
   2  WHERE Email = 'meena.krishnan@gmail.com';
 
 1 row deleted.
 
-SQL> 
 SQL> SELECT * FROM Customer;
 
 CUSTOMER_ID FIRST_NAME                                         LAST_NAME                                                                                                                                
@@ -461,12 +423,8 @@ Tirunelveli
 vignesh.ganesh@gmail.com                                                                             9876578901      25-MAR-02         23                                                               
 Thanjavur                                                                                                                                                                                               
                                                                                                                                                                                                         
-
 9 rows selected.
 
-SQL> 
 SQL> COMMIT;
 
 Commit complete.
-
-SQL> SPOOL OFF
