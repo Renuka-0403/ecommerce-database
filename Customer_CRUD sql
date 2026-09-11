@@ -14,25 +14,21 @@ SQL> INSERT INTO Customer
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Customer
   2  VALUES (2, 'Arjun', 'Kumar', 'arjun.kumar@gmail.com', '9876501234', TO_DATE('22-09-2003', 'DD-MM-YYYY'), 22, 'Coimbatore');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Customer
   2  VALUES (3, 'Priya', 'Kumar', 'priya.kumar@gmail.com', '9876512345', TO_DATE('08-12-2003', 'DD-MM-YYYY'), 22, 'Madurai');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Customer
   2  VALUES (4, 'Rahul', 'Sharma', 'rahul.sharma@gmail.com', '9876523456', TO_DATE('10-04-2002', 'DD-MM-YYYY'), 23, 'Salem');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Customer
   2  VALUES (5, 'Keerthana', 'Mohan', 'keerthana.mohan@gmail.com', '9876534567', TO_DATE('18-02-2005', 'DD-MM-YYYY'), 20, 'Trichy');
 
