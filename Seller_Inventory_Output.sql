@@ -1,4 +1,3 @@
-SQL> 
 SQL> CREATE TABLE Seller (
   2  	 Seller_ID    NUMBER PRIMARY KEY,
   3  	 Seller_Name  VARCHAR2(100) NOT NULL,
@@ -9,7 +8,6 @@ SQL> CREATE TABLE Seller (
 
 Table created.
 
-SQL> 
 SQL> CREATE TABLE Inventory (
   2  	 Inventory_ID	NUMBER PRIMARY KEY,
   3  	 Product_ID	NUMBER NOT NULL,
@@ -27,13 +25,11 @@ SQL> CREATE TABLE Inventory (
 
 Table created.
 
-SQL> 
 SQL> INSERT INTO Seller
   2  VALUES (1, 'TimeZone Watches', 'timezone@gmail.com', '9876500001', 'Chennai');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Seller
   2  VALUES (2, 'Watch World', 'watchworld@gmail.com', '9876500002', 'Coimbatore');
 
@@ -44,38 +40,32 @@ SQL> INSERT INTO Seller
   2  VALUES (3, 'Wrist Point', 'wristpoint@gmail.com', '9876500003', 'Madurai');
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Seller
   2  VALUES (4, 'Elite Watches', 'elitewatches@gmail.com', '9876500004', 'Salem');
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Seller
   2  VALUES (5, 'Classic Time', 'classictime@gmail.com', '9876500005', 'Trichy');
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Seller
   2  VALUES (6, 'Smart Wrist', 'smartwrist@gmail.com', '9876500006', 'Erode');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Seller
   2  VALUES (7, 'Royal Timepieces', 'royaltimepieces@gmail.com', '9876500007', 'Vellore');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Seller
   2  VALUES (8, 'Watch Hub', 'watchhub@gmail.com', '9876500008', 'Thanjavur');
 
 1 row created.
 
-SQL> 
 SQL> SELECT * FROM Seller;
 
  SELLER_ID SELLER_NAME                                                                                                                                                                                  
@@ -119,55 +109,47 @@ Thanjavur
 
 8 rows selected.
 
-SQL> 
 SQL> INSERT INTO Inventory
   2  VALUES (1, 101, 1, 25, 'Available', TO_DATE('01-09-2026','DD-MM-YYYY'));
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Inventory
   2  VALUES (2, 102, 2, 18, 'Available', TO_DATE('02-09-2026','DD-MM-YYYY'));
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Inventory
   2  VALUES (3, 103, 3, 30, 'Available', TO_DATE('03-09-2026','DD-MM-YYYY'));
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Inventory
   2  VALUES (4, 104, 4, 15, 'Available', TO_DATE('04-09-2026','DD-MM-YYYY'));
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Inventory
   2  VALUES (5, 105, 5, 12, 'Available', TO_DATE('05-09-2026','DD-MM-YYYY'));
 
 1 row created.
 
-SQL> 
+
 SQL> INSERT INTO Inventory
   2  VALUES (6, 106, 6, 20, 'Available', TO_DATE('06-09-2026','DD-MM-YYYY'));
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Inventory
   2  VALUES (7, 107, 7, 0, 'Unavailable', TO_DATE('07-09-2026','DD-MM-YYYY'));
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Inventory
   2  VALUES (8, 108, 8, 0, 'Unavailable', TO_DATE('08-09-2026','DD-MM-YYYY'));
 
 1 row created.
 
-SQL> 
 SQL> SELECT * FROM Inventory;
 
 INVENTORY_ID PRODUCT_ID  SELLER_ID STOCK_QUANTITY STOCK_STATUS         LAST_UPDA                                                                                                                        
@@ -183,7 +165,6 @@ INVENTORY_ID PRODUCT_ID  SELLER_ID STOCK_QUANTITY STOCK_STATUS         LAST_UPDA
 
 8 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 s.Seller_ID,
   3  	 s.Seller_Name,
@@ -229,7 +210,6 @@ Digital Sport Watch                                                             
 
 8 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 p.Product_ID,
   3  	 p.Product_Name,
@@ -251,7 +231,6 @@ PRODUCT_ID PRODUCT_NAME                                                         
 
 6 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 p.Product_ID,
   3  	 p.Product_Name,
@@ -269,7 +248,6 @@ PRODUCT_ID PRODUCT_NAME                                                         
 
 2 rows selected.
 
-SQL> 
 SQL> UPDATE Inventory
   2  SET Stock_Quantity = 10,
   3  	 Stock_Status = 'Available',
@@ -277,8 +255,7 @@ SQL> UPDATE Inventory
   5  WHERE Product_ID = 107;
 
 1 row updated.
-
-SQL> 
+ 
 SQL> SELECT * FROM Inventory WHERE Product_ID = 107;
 
 INVENTORY_ID PRODUCT_ID  SELLER_ID STOCK_QUANTITY STOCK_STATUS         LAST_UPDA                                                                                                                        
@@ -287,7 +264,6 @@ INVENTORY_ID PRODUCT_ID  SELLER_ID STOCK_QUANTITY STOCK_STATUS         LAST_UPDA
 
 1 row selected.
 
-SQL> 
 SQL> SELECT
   2  	 i.Inventory_ID,
   3  	 p.Product_ID,
@@ -334,7 +310,6 @@ Watch Hub                                                                       
 
 8 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 Stock_Status,
   3  	 COUNT(*) AS Product_Count
@@ -347,7 +322,6 @@ Unavailable                      1
 
 2 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 s.Seller_ID,
   3  	 s.Seller_Name,
@@ -373,7 +347,6 @@ SQL> SELECT
 
 8 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 p.Product_ID,
   3  	 p.Product_Name,
@@ -394,10 +367,7 @@ Watch Hub                                                                       
 
 1 row selected.
 
-SQL> 
 SQL> COMMIT;
 
 Commit complete.
 
-SQL> 
-SQL> SPOOL OFF
