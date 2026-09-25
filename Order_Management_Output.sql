@@ -1,4 +1,3 @@
-SQL> 
 SQL> CREATE TABLE Orders (
   2  	 Order_ID	NUMBER PRIMARY KEY,
   3  	 Customer_ID	NUMBER NOT NULL,
@@ -13,7 +12,6 @@ SQL> CREATE TABLE Orders (
 
 Table created.
 
-SQL> 
 SQL> CREATE TABLE Order_Details (
   2  	 Order_Detail_ID NUMBER PRIMARY KEY,
   3  	 Order_ID	 NUMBER NOT NULL,
@@ -30,82 +28,68 @@ SQL> CREATE TABLE Order_Details (
  14  );
 
 Table created.
-
-SQL> 
+ 
 SQL> INSERT INTO Orders
   2  VALUES (1001, 1, TO_DATE('01-09-2026','DD-MM-YYYY'), 6497.00, 'Delivered', 6497.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Orders
   2  VALUES (1002, 2, TO_DATE('02-09-2026','DD-MM-YYYY'), 3999.00, 'Shipped', 3999.00);
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Orders
   2  VALUES (1003, 3, TO_DATE('03-09-2026','DD-MM-YYYY'), 1999.00, 'Processing', 1999.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Orders
   2  VALUES (1004, 4, TO_DATE('04-09-2026','DD-MM-YYYY'), 5999.00, 'Delivered', 5999.00);
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Orders
   2  VALUES (1005, 5, TO_DATE('05-09-2026','DD-MM-YYYY'), 7499.00, 'Shipped', 7499.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Orders
   2  VALUES (1006, 6, TO_DATE('06-09-2026','DD-MM-YYYY'), 4599.00, 'Processing', 4599.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Orders
   2  VALUES (1007, 7, TO_DATE('07-09-2026','DD-MM-YYYY'), 5299.00, 'Delivered', 5299.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Orders
   2  VALUES (1008, 8, TO_DATE('08-09-2026','DD-MM-YYYY'), 12999.00, 'Shipped', 12999.00);
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Orders
   2  VALUES (1009, 9, TO_DATE('09-09-2026','DD-MM-YYYY'), 2499.00, 'Processing', 2499.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Order_Details VALUES (1, 1001, 101, 1, 2499.00, 2499.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Order_Details VALUES (2, 1001, 103, 2, 1999.00, 3998.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Order_Details VALUES (3, 1002, 102, 1, 3999.00, 3999.00);
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Order_Details VALUES (4, 1003, 103, 1, 1999.00, 1999.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Order_Details VALUES (5, 1004, 104, 1, 5999.00, 5999.00);
 
 1 row created.
@@ -114,13 +98,11 @@ SQL>
 SQL> INSERT INTO Order_Details VALUES (6, 1005, 105, 1, 7499.00, 7499.00);
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Order_Details VALUES (7, 1006, 106, 1, 4599.00, 4599.00);
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Order_Details VALUES (8, 1007, 107, 1, 5299.00, 5299.00);
 
 1 row created.
@@ -130,12 +112,10 @@ SQL> INSERT INTO Order_Details VALUES (9, 1008, 108, 1, 12999.00, 12999.00);
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Order_Details VALUES (10, 1009, 101, 1, 2499.00, 2499.00);
 
 1 row created.
-
-SQL> 
+ 
 SQL> SELECT * FROM Orders;
 
   ORDER_ID CUSTOMER_ID ORDER_DAT      TOTAL ORDER_STATUS         TOTAL_AMOUNT                                                                                                                           
@@ -152,7 +132,6 @@ SQL> SELECT * FROM Orders;
 
 9 rows selected.
 
-SQL> 
 SQL> SELECT * FROM Order_Details;
 
 ORDER_DETAIL_ID   ORDER_ID PRODUCT_ID   QUANTITY UNIT_PRICE   SUBTOTAL                                                                                                                                  
@@ -170,7 +149,6 @@ ORDER_DETAIL_ID   ORDER_ID PRODUCT_ID   QUANTITY UNIT_PRICE   SUBTOTAL
 
 10 rows selected.
 
-SQL> 
 SQL> UPDATE Orders
   2  SET Total = 6999.00,
   3  	 Total_Amount = 6999.00
@@ -178,7 +156,6 @@ SQL> UPDATE Orders
 
 1 row updated.
 
-SQL> 
 SQL> SELECT * FROM Orders WHERE Order_ID = 1001;
 
   ORDER_ID CUSTOMER_ID ORDER_DAT      TOTAL ORDER_STATUS         TOTAL_AMOUNT                                                                                                                           
@@ -186,15 +163,13 @@ SQL> SELECT * FROM Orders WHERE Order_ID = 1001;
       1001           1 01-SEP-26       6999 Delivered                    6999                                                                                                                           
 
 1 row selected.
-
-SQL> 
+ 
 SQL> UPDATE Orders
   2  SET Order_Date = TO_DATE('15-09-2026','DD-MM-YYYY')
   3  WHERE Order_ID = 1001;
 
 1 row updated.
 
-SQL> 
 SQL> UPDATE Order_Details
   2  SET Quantity = 3,
   3  	 Subtotal = 5997.00
@@ -202,7 +177,6 @@ SQL> UPDATE Order_Details
 
 1 row updated.
 
-SQL> 
 SQL> SELECT
   2  	 c.Customer_ID,
   3  	 c.First_Name,
@@ -231,7 +205,6 @@ CUSTOMER_ID FIRST_NAME                                         LAST_NAME        
 
 9 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 c.Customer_ID,
   3  	 c.First_Name,
@@ -261,10 +234,7 @@ CUSTOMER_ID FIRST_NAME                                         LAST_NAME        
 
 9 rows selected.
 
-SQL> 
 SQL> COMMIT;
 
 Commit complete.
 
-SQL> 
-SQL> SPOOL OFF
