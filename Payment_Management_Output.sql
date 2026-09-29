@@ -1,4 +1,3 @@
-SQL> 
 SQL> CREATE TABLE Payment (
   2  	 Payment_ID	 NUMBER PRIMARY KEY,
   3  	 Order_ID	 NUMBER NOT NULL,
@@ -13,61 +12,51 @@ SQL> CREATE TABLE Payment (
 
 Table created.
 
-SQL> 
 SQL> INSERT INTO Payment
   2  VALUES (501, 1001, 'UPI', TO_DATE('01-09-2026','DD-MM-YYYY'), 6497.00, 'Successful');
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Payment
   2  VALUES (502, 1002, 'Credit Card', TO_DATE('02-09-2026','DD-MM-YYYY'), 3999.00, 'Successful');
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Payment
   2  VALUES (503, 1003, 'Debit Card', TO_DATE('03-09-2026','DD-MM-YYYY'), 1999.00, 'Failed');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Payment
   2  VALUES (504, 1004, 'UPI', TO_DATE('04-09-2026','DD-MM-YYYY'), 5999.00, 'Successful');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Payment
   2  VALUES (505, 1005, 'Net Banking', TO_DATE('05-09-2026','DD-MM-YYYY'), 7499.00, 'Successful');
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Payment
   2  VALUES (506, 1006, 'UPI', TO_DATE('06-09-2026','DD-MM-YYYY'), 4599.00, 'Failed');
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Payment
   2  VALUES (507, 1007, 'Credit Card', TO_DATE('07-09-2026','DD-MM-YYYY'), 5299.00, 'Successful');
 
 1 row created.
-
-SQL> 
+ 
 SQL> INSERT INTO Payment
   2  VALUES (508, 1008, 'Debit Card', TO_DATE('08-09-2026','DD-MM-YYYY'), 12999.00, 'Successful');
 
 1 row created.
 
-SQL> 
 SQL> INSERT INTO Payment
   2  VALUES (509, 1009, 'UPI', TO_DATE('09-09-2026','DD-MM-YYYY'), 2499.00, 'Successful');
 
 1 row created.
 
-SQL> 
 SQL> SELECT * FROM Payment;
 
 PAYMENT_ID   ORDER_ID PAYMENT_MODE         PAYMENT_D PAYMENT_AMOUNT PAYMENT_STATUS                                                                                                                      
@@ -83,8 +72,7 @@ PAYMENT_ID   ORDER_ID PAYMENT_MODE         PAYMENT_D PAYMENT_AMOUNT PAYMENT_STAT
        509       1009 UPI                  09-SEP-26           2499 Successful                                                                                                                          
 
 9 rows selected.
-
-SQL> 
+ 
 SQL> SELECT * FROM Payment
   2  WHERE Payment_Status = 'Successful';
 
@@ -100,7 +88,6 @@ PAYMENT_ID   ORDER_ID PAYMENT_MODE         PAYMENT_D PAYMENT_AMOUNT PAYMENT_STAT
 
 7 rows selected.
 
-SQL> 
 SQL> SELECT * FROM Payment
   2  WHERE Payment_Status = 'Failed';
 
@@ -110,16 +97,13 @@ PAYMENT_ID   ORDER_ID PAYMENT_MODE         PAYMENT_D PAYMENT_AMOUNT PAYMENT_STAT
        506       1006 UPI                  06-SEP-26           4599 Failed                                                                                                                              
 
 2 rows selected.
-
-SQL> 
-SQL> 
+ 
 SQL> UPDATE Payment
   2  SET Payment_Status = 'Successful'
   3  WHERE Payment_ID = 503;
 
 1 row updated.
-
-SQL> 
+ 
 SQL> SELECT * FROM Payment
   2  WHERE Payment_ID = 503;
 
@@ -128,8 +112,7 @@ PAYMENT_ID   ORDER_ID PAYMENT_MODE         PAYMENT_D PAYMENT_AMOUNT PAYMENT_STAT
        503       1003 Debit Card           03-SEP-26           1999 Successful                                                                                                                          
 
 1 row selected.
-
-SQL> 
+ 
 SQL> SELECT
   2  	 Payment_Mode,
   3  	 COUNT(Payment_ID) AS Total_Transactions,
@@ -148,8 +131,6 @@ UPI                                   3        14995
 
 4 rows selected.
 
-SQL> 
-SQL> 
 SQL> SELECT
   2  	 p.Payment_ID,
   3  	 o.Order_ID,
@@ -200,11 +181,9 @@ Successful
                                                                                                                                                                                                         
 
 9 rows selected.
-
-SQL> 
+ 
 SQL> COMMIT;
 
 Commit complete.
 
-SQL> 
-SQL> SPOOL OFF
+
