@@ -1,4 +1,3 @@
-SQL> 
 SQL> CREATE TABLE Review (
   2  	 Review_ID     NUMBER PRIMARY KEY,
   3  	 Customer_ID   NUMBER NOT NULL,
@@ -11,12 +10,9 @@ SQL> CREATE TABLE Review (
  10  	 CONSTRAINT FK_Review_Product
  11  	     FOREIGN KEY (Product_ID)
  12  	     REFERENCES Product(Product_ID)
- 13  );
-CREATE TABLE Review (
-             *
-ERROR at line 1:
-ORA-00955: name is already used by an existing object 
+ 13  ); 
 
+Table created.
 
 SQL> CREATE TABLE Rating (
   2  	 Rating_ID     NUMBER PRIMARY KEY,
@@ -31,174 +27,97 @@ SQL> CREATE TABLE Rating (
  11  	     FOREIGN KEY (Product_ID)
  12  	     REFERENCES Product(Product_ID)
  13  );
-CREATE TABLE Rating (
-             *
-ERROR at line 1:
-ORA-00955: name is already used by an existing object 
 
+Table created.
 
 SQL> INSERT INTO Review
   2  VALUES (601, 1, 101, 'Good quality and elegant design.', TO_DATE('10-09-2026','DD-MM-YYYY'));
-INSERT INTO Review
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008496) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Review
   2  VALUES (602, 2, 102, 'Beautiful watch with premium finish.', TO_DATE('11-09-2026','DD-MM-YYYY'));
-INSERT INTO Review
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008496) violated 
 
-
-SQL> 
+1 row created.
+  
 SQL> INSERT INTO Review
   2  VALUES (603, 3, 103, 'Good sports watch and easy to use.', TO_DATE('12-09-2026','DD-MM-YYYY'));
-INSERT INTO Review
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008496) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Review
   2  VALUES (604, 4, 104, 'Useful smart features and good display.', TO_DATE('13-09-2026','DD-MM-YYYY'));
-INSERT INTO Review
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008496) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Review
   2  VALUES (605, 5, 105, 'Comfortable and suitable for daily use.', TO_DATE('14-09-2026','DD-MM-YYYY'));
-INSERT INTO Review
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008496) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Review
   2  VALUES (606, 6, 106, 'Strong design and excellent performance.', TO_DATE('15-09-2026','DD-MM-YYYY'));
-INSERT INTO Review
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008496) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Review
   2  VALUES (607, 7, 107, 'Great outdoor watch with good water resistance.', TO_DATE('16-09-2026','DD-MM-YYYY'));
-INSERT INTO Review
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008496) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Review
   2  VALUES (608, 8, 108, 'Premium looking watch with excellent finish.', TO_DATE('17-09-2026','DD-MM-YYYY'));
-INSERT INTO Review
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008496) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Review
   2  VALUES (609, 9, 101, 'Classic design and good value for money.', TO_DATE('18-09-2026','DD-MM-YYYY'));
-INSERT INTO Review
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008496) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Rating
   2  VALUES (701, 1, 101, 5, TO_DATE('10-09-2026','DD-MM-YYYY'));
-INSERT INTO Rating
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008503) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Rating
   2  VALUES (702, 2, 102, 5, TO_DATE('11-09-2026','DD-MM-YYYY'));
-INSERT INTO Rating
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008503) violated 
 
+1 row created.
 
-SQL> 
-SQL> INSERT INTO Rating
+SQL>INSERT INTO Rating
   2  VALUES (703, 3, 103, 4, TO_DATE('12-09-2026','DD-MM-YYYY'));
-INSERT INTO Rating
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008503) violated 
 
-
-SQL> 
 SQL> INSERT INTO Rating
   2  VALUES (704, 4, 104, 4, TO_DATE('13-09-2026','DD-MM-YYYY'));
-INSERT INTO Rating
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008503) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Rating
   2  VALUES (705, 5, 105, 5, TO_DATE('14-09-2026','DD-MM-YYYY'));
-INSERT INTO Rating
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008503) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Rating
   2  VALUES (706, 6, 106, 5, TO_DATE('15-09-2026','DD-MM-YYYY'));
-INSERT INTO Rating
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008503) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Rating
   2  VALUES (707, 7, 107, 4, TO_DATE('16-09-2026','DD-MM-YYYY'));
-INSERT INTO Rating
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008503) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Rating
   2  VALUES (708, 8, 108, 5, TO_DATE('17-09-2026','DD-MM-YYYY'));
-INSERT INTO Rating
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008503) violated 
 
+1 row created.
 
-SQL> 
 SQL> INSERT INTO Rating
   2  VALUES (709, 9, 101, 4, TO_DATE('18-09-2026','DD-MM-YYYY'));
-INSERT INTO Rating
-*
-ERROR at line 1:
-ORA-00001: unique constraint (SYSTEM.SYS_C008503) violated 
 
+1 row created.
 
-SQL> 
 SQL> SELECT * FROM Review;
 
  REVIEW_ID CUSTOMER_ID PRODUCT_ID                                                                                                                                                                       
@@ -243,10 +162,8 @@ Classic design and good value for money.
 Good quality and elegant design.                                                                                                                                                                        
 10-SEP-26                                                                                                                                                                                               
                                                                                                                                                                                                         
-
 9 rows selected.
 
-SQL> 
 SQL> SELECT * FROM Rating;
 
  RATING_ID CUSTOMER_ID PRODUCT_ID     RATING RATING_DA                                                                                                                                                  
@@ -263,7 +180,6 @@ SQL> SELECT * FROM Rating;
 
 9 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 r.Review_ID,
   3  	 c.Customer_ID,
@@ -333,10 +249,8 @@ Classic Silver Watch
 Classic design and good value for money.                                                                                                                                                                
 18-SEP-26                                                                                                                                                                                               
                                                                                                                                                                                                         
-
 9 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 p.Product_ID,
   3  	 p.Product_Name,
@@ -362,7 +276,6 @@ PRODUCT_ID PRODUCT_NAME                                                         
 
 8 rows selected.
 
-SQL> 
 SQL> SELECT
   2  	 r.Rating_ID,
   3  	 p.Product_ID,
@@ -389,10 +302,7 @@ SQL> SELECT
 
 9 rows selected.
 
-SQL> 
 SQL> COMMIT;
 
 Commit complete.
 
-SQL> 
-SQL> SPOOL OFF
