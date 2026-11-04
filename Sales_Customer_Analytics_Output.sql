@@ -1,4 +1,3 @@
-SQL> 
 SQL> SELECT COUNT(*) AS Total_Orders
   2  FROM Orders;
 
@@ -8,7 +7,6 @@ TOTAL_ORDERS
 
 1 row selected.
 
-SQL> 
 SQL> SELECT SUM(Total_Amount) AS Total_Sales
   2  FROM Orders;
 
@@ -18,7 +16,6 @@ TOTAL_SALES
 
 1 row selected.
 
-SQL>
 SQL> SELECT AVG(Total_Amount) AS Average_Order_Amount
   2  FROM Orders;
 
@@ -28,7 +25,6 @@ AVERAGE_ORDER_AMOUNT
 
 1 row selected.
 
-SQL> 
 SQL> SELECT MIN(Total_Amount) AS Lowest_Order_Amount
   2  FROM Orders;
 
@@ -48,7 +44,6 @@ HIGHEST_ORDER_AMOUNT
 
 1 row selected.
 
-SQL> 
 SQL> SELECT SUM(Total_Amount) AS Total_Sales
   2  FROM Orders;
 
@@ -58,7 +53,6 @@ TOTAL_SALES
 
 1 row selected.
 
-SQL> 
 SQL> SELECT c.Customer_ID,
   2  	    c.First_Name,
   3  	    c.Last_Name,
@@ -84,8 +78,7 @@ CUSTOMER_ID FIRST_NAME                                         LAST_NAME        
           3 Priya                                              Kumar                                                               1999                                                                 
 
 9 rows selected.
-
-SQL> 
+ 
 SQL> SELECT c.Customer_ID,
   2  	    c.First_Name,
   3  	    c.Last_Name,
@@ -111,8 +104,7 @@ CUSTOMER_ID FIRST_NAME                                         LAST_NAME        
           3 Priya                                              Kumar                                                               1999                                                                 
 
 9 rows selected.
-
-SQL> 
+ 
 SQL> SELECT p.Product_ID,
   2  	    p.Product_Name,
   3  	    SUM(od.Quantity) AS Total_Quantity_Sold
@@ -135,8 +127,7 @@ PRODUCT_ID PRODUCT_NAME                                                         
        104 Smart Fit Pro                                                                                                          1                                                                     
 
 8 rows selected.
-
-SQL> 
+ 
 SQL> SELECT p.Product_ID,
   2  	    p.Product_Name,
   3  	    SUM(od.Quantity) AS Total_Quantity_Sold,
@@ -160,8 +151,7 @@ PRODUCT_ID PRODUCT_NAME                                                         
        102 Elegant Gold Watch                                                                                                     1               3999                                                  
 
 8 rows selected.
-
-SQL> 
+ 
 SQL> SELECT c.Category_ID,
   2  	    c.Category_Name,
   3  	    SUM(od.Quantity) AS Total_Quantity_Sold,
@@ -184,8 +174,7 @@ CATEGORY_ID CATEGORY_NAME                                      TOTAL_QUANTITY_SO
           2 Digital                                                              4               7996                                                                                                   
 
 5 rows selected.
-
-SQL> 
+ 
 SQL> SELECT cu.Customer_ID,
   2  	    cu.First_Name,
   3  	    cu.Last_Name,
@@ -246,7 +235,6 @@ Classic Silver Watch                                                            
 
 10 rows selected.
 
-SQL> 
 SQL> COMMIT;
 
 Commit complete.
